@@ -1,8 +1,10 @@
 package com.axity.parquededinosaurios.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public abstract class Trabajador {
     private int id;
     private String nombre;

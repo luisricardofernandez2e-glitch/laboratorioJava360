@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Guardia extends Trabajador {
 
+    public Guardia(int id, String nombre, Double Salario) {
+        super(id, nombre, Salario);
+    }
+
     @Override
     public String getRol() {
         return "GUARDIA";
