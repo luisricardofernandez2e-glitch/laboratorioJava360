@@ -11,5 +11,9 @@ public abstract class Dinosaurio {
     abstract public Double getPobabilidadAtaque();
     abstract public String getDieta();
     abstract public Double getCostoAlimenticio();
-    
+
+
+    public void escapar(){ estado = EstadoDinosaurio.ESCAPADO;}
+    public void capturado(){ estado = EstadoDinosaurio.CAPTURADO;}
+    public void encerrado(){ estado = EstadoDinosaurio.ENCERRADO;}
 }
