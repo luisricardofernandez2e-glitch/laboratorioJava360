@@ -1,5 +1,7 @@
 package com.axity.parquededinosaurios;
 
+import com.axity.parquededinosaurios.configuracion.ParqueConfiguracion;
+import com.axity.parquededinosaurios.simulacion.SimulationEngine;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ParqueDeDinosauriosApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ParqueDeDinosauriosApplication.class, args);
+        ParqueConfiguracion config = ParqueConfiguracion.getInstancia();
+        new SimulationEngine(config).run();
     }
 
 }

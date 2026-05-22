@@ -5,6 +5,10 @@ public class DinoCarnivoro extends Dinosaurio{
         super(id, nombre, especie, estado);
     }
 
+    public DinoCarnivoro() {
+        super();
+    }
+
     @Override
     public Double getPobabilidadAtaque() {
         return 0.9;

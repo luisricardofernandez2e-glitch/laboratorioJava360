@@ -1,21 +1,19 @@
 package com.axity.parquededinosaurios.configuracion;
 
-import com.axity.parquededinosaurios.historial.CsvWriter;
-import com.axity.parquededinosaurios.model.*;
-import com.axity.parquededinosaurios.zonas.PlantaEnergia;
-import com.axity.parquededinosaurios.zonas.ZonaParque;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+import com.axity.parquededinosaurios.historial.CsvWriter;
+import com.axity.parquededinosaurios.model.Dinosaurio;
+import com.axity.parquededinosaurios.model.EstadoDinosaurio;
+import com.axity.parquededinosaurios.model.EstadoTurista;
+import com.axity.parquededinosaurios.model.Trabajador;
+import com.axity.parquededinosaurios.model.Turistas;
+import com.axity.parquededinosaurios.zonas.PlantaEnergia;
+import com.axity.parquededinosaurios.zonas.ZonaParque;
+
 public class ParkState {
 
     private List<Turistas> turistas = new ArrayList<>();
@@ -28,6 +26,21 @@ public class ParkState {
     private double totalRevenue;
     private double totalExpenses;
     private long currentStep;
+
+    public ParkState() {}
+
+    public List<Turistas> getTuristas() { return turistas; }
+    public List<Dinosaurio> getDinosaurios() { return dinosaurios; }
+    public List<Trabajador> getTrabajadores() { return trabajadores; }
+    public PlantaEnergia getPlantaEnergia() { return plantaEnergia; }
+    public void setPlantaEnergia(PlantaEnergia plantaEnergia) { this.plantaEnergia = plantaEnergia; }
+    public CsvWriter getWriter() { return writer; }
+    public void setWriter(CsvWriter writer) { this.writer = writer; }
+    public Random getRng() { return rng; }
+    public void setRng(Random rng) { this.rng = rng; }
+    public double getTotalRevenue() { return totalRevenue; }
+    public double getTotalExpenses() { return totalExpenses; }
+    public long getCurrentStep() { return currentStep; }
 
     public List<Turistas> getActiveTourists() {
 

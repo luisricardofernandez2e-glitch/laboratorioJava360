@@ -1,30 +1,29 @@
 package com.axity.parquededinosaurios.zonas;
 
+import java.time.LocalDateTime;
+import java.util.Random;
+
 import com.axity.parquededinosaurios.configuracion.ParqueConfiguracion;
 import com.axity.parquededinosaurios.historial.CsvWriter;
 import com.axity.parquededinosaurios.historial.historialEvento;
 import com.axity.parquededinosaurios.historial.historialGastos;
 import com.axity.parquededinosaurios.model.Turistas;
-import lombok.Getter;
-
-import java.time.LocalDateTime;
-import java.util.Random;
 
 public class PlantaEnergia implements ZonaParque{
 
     private ParqueConfiguracion configuracion = ParqueConfiguracion.getInstancia();
-    @Getter
     private boolean funcionando = true;
     private double energiaActual;
+    private double capacidadEnergia;
 
     public PlantaEnergia() {
-
-        energiaActual =
-                configuracion.getDouble(
-                        "powerplant.initialEnergy",
-                        100.0
-                );
+        this.capacidadEnergia = configuracion.getDouble("powerplant.initialEnergy", 100.0);
+        this.energiaActual = capacidadEnergia;
     }
+
+    public boolean isFuncionando() { return funcionando; }
+    public double getEnergiaActual() { return energiaActual; }
+    public double getCapacidadEnergia() { return capacidadEnergia; }
 
     @Override
     public String getNombre() {

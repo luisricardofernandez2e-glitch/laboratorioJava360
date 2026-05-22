@@ -21,7 +21,7 @@ public class BlackoutEvent implements SimulationEvent{
     @Override
     public void execute(ParkState state, Random rng) {
 
-        state.getPowerPlant()
+        state.getPlantaEnergia()
                 .triggerFailure(
                         state.getWriter()
                 );

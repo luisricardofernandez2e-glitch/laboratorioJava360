@@ -1,0 +1,8 @@
+step,eventName,description,affectedEntities,timestamp
+1,POWER_FAILURE,La planta eléctrica falló,Planta de Energia,2026-05-21T23:34:13.376024400
+2,POWER_FAILURE,La planta eléctrica falló,Planta de Energia,2026-05-21T23:34:14.831285100
+48,Tormenta torrencial,El parque fue evacuado por tormenta,Turistas,2026-05-21T23:34:15.019475700
+3,POWER_FAILURE,La planta eléctrica falló,Planta de Energia,2026-05-21T23:34:15.890964500
+4,POWER_FAILURE,La planta eléctrica falló,Planta de Energia,2026-05-21T23:34:16.597462200
+63,APAGON_MASIVO,La planta eléctrica sufrió un apagón,PowerPlant,2026-05-21T23:34:16.599464
+5,POWER_FAILURE,La planta eléctrica falló,Planta de Energia,2026-05-21T23:34:19.188859400

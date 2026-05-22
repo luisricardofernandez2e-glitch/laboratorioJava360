@@ -8,6 +8,7 @@ import com.axity.parquededinosaurios.model.Guardia;
 import com.axity.parquededinosaurios.model.Tecnico;
 import com.axity.parquededinosaurios.model.Trabajador;
 import com.axity.parquededinosaurios.model.Turistas;
+import com.axity.parquededinosaurios.monitoring.ParkMonitor;
 import com.axity.parquededinosaurios.zonas.*;
 
 import java.time.LocalDateTime;
