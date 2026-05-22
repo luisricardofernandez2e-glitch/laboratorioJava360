@@ -11,19 +11,23 @@ public class CsvWriter {
     private final Path gastosFile;
     private final Path eventoFile;
 
+    private static long idGanancia = 1;
+    private static long idGasto = 1;
+    private static long idEvento = 1;
+
     public CsvWriter(String outputDir) {
 
         try {
 
-            // Crear carpeta
+
             Files.createDirectories(Path.of(outputDir));
 
-            // Crear rutas
+
             ganaciasFile = Path.of(outputDir, "ganancias.csv");
             gastosFile = Path.of(outputDir, "gastos.csv");
             eventoFile = Path.of(outputDir, "eventos.csv");
 
-            // Inicializar archivos con headers
+
             initFile(
                     ganaciasFile,
                     "id,tipo,cantidad,idTourista,zona,timestamp"
@@ -44,7 +48,7 @@ public class CsvWriter {
         }
     }
 
-    // Crear archivo y escribir header
+
     // false = sobrescribir
     private void initFile(Path path, String header) {
 
@@ -59,11 +63,20 @@ public class CsvWriter {
         }
     }
 
-    // =========================
-    // Agregar ingresos
-    // =========================
 
-    public void appendRevenue(historialGanancias r) {
+    public long generarIdGanancia() {
+        return idGanancia++;
+    }
+
+    public long generarIdGasto() {
+        return idGasto++;
+    }
+
+    public long generarIdEvento() {
+        return idEvento++;
+    }
+
+    public void appendGanancia(historialGanancias r) {
 
         try (PrintWriter writer =
                      new PrintWriter(
@@ -76,11 +89,7 @@ public class CsvWriter {
         }
     }
 
-    // =========================
-    // Agregar gastos
-    // =========================
-
-    public void appendExpense(historialGastos e) {
+    public void appendGastos(historialGastos e) {
 
         try (PrintWriter writer =
                      new PrintWriter(
@@ -93,11 +102,7 @@ public class CsvWriter {
         }
     }
 
-    // =========================
-    // Agregar eventos
-    // =========================
-
-    public void appendEvent(historialEvento ev) {
+    public void appendEvento(historialEvento ev) {
 
         try (PrintWriter writer =
                      new PrintWriter(
