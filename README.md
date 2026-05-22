@@ -27,7 +27,7 @@ El patrón **Strategy** se ha implementado para el manejo de eventos (emergencia
 ## Requisitos
 
 *   Java 17 o superior.
-*   Maven/Gradle (según el gestor de dependencias utilizado).
+*   Maven.
 
 ## Compilación y Ejecución
 
