@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
@@ -21,11 +22,22 @@ public class ParkState {
     private List<Dinosaurio> dinosaurios = new ArrayList<>();
     private List<Trabajador> trabajadores = new ArrayList<>();
     private List<ZonaParque> zonas = new ArrayList<>();
+    private PlantaEnergia plantaEnergia;
     private CsvWriter writer;
     private Random rng;
     private double totalRevenue;
     private double totalExpenses;
     private long currentStep;
+
+    public List<Turistas> getActiveTourists() {
+
+        return turistas.stream()
+                .filter(t ->
+                        t.getEstado()
+                                == EstadoTurista.EN_PARQUE
+                )
+                .collect(Collectors.toList());
+    }
 
     public int countActiveTourists() {
         int total = 0;
@@ -53,6 +65,10 @@ public class ParkState {
 
     public void addRevenue(double amount) {
         totalRevenue += amount;
+    }
+
+    public void incrementStep() {
+        currentStep++;
     }
 
     public void addExpense(double amount) {

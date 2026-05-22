@@ -54,18 +54,36 @@ public class ZonaDeArribo implements ZonaParque {
         turistas.remove(turista);
     }
 
-    public void ventaBoletos(int cantidad, CsvWriter writer) {
-        writer.appendGanancia(new historialGanancias(
-                writer.generarIdGanancia(),
-                "Venta boleto",
-                cantidad * configuracion.getDouble("arrival.ticketPrice",25.0),
-                cantidad,
-                getNombre(),
-                LocalDateTime.now()
-        ));
+    public List<Turistas> ventaBoletos(
+            int cantidad,
+            CsvWriter writer
+    ) {
 
-        for(Turistas turista : turistas) {
+        List<Turistas> nuevos = new ArrayList<>();
+
+        for (int i = 0; i < cantidad; i++) {
+
+            Turistas turista = new Turistas();
+
             turista.setEstado(EstadoTurista.EN_PARQUE);
+
+            nuevos.add(turista);
         }
+
+        writer.appendGanancia(
+                new historialGanancias(
+                        writer.generarIdGanancia(),
+                        "Venta boleto",
+                        cantidad * configuracion.getDouble(
+                                "arrival.ticketPrice",
+                                25.0
+                        ),
+                        cantidad,
+                        getNombre(),
+                        LocalDateTime.now()
+                )
+        );
+
+        return nuevos;
     }
 }

@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class Turistas {
-    private String nombre;
+    private int idTurista;
     private EstadoTurista estado;
     private List<String> zonasVisitadas;
     private Double dineroGastado;

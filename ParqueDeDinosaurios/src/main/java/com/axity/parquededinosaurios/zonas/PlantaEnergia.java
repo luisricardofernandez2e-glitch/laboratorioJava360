@@ -5,6 +5,7 @@ import com.axity.parquededinosaurios.historial.CsvWriter;
 import com.axity.parquededinosaurios.historial.historialEvento;
 import com.axity.parquededinosaurios.historial.historialGastos;
 import com.axity.parquededinosaurios.model.Turistas;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.Random;
@@ -12,6 +13,7 @@ import java.util.Random;
 public class PlantaEnergia implements ZonaParque{
 
     private ParqueConfiguracion configuracion = ParqueConfiguracion.getInstancia();
+    @Getter
     private boolean funcionando = true;
     private double energiaActual;
 
