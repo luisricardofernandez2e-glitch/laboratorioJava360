@@ -9,15 +9,13 @@ Para garantizar un código limpio, escalable y mantenible, se han implementado l
 ### 1. Singleton (en `ParkConfig`)
 El patrón **Singleton** se utiliza en la clase `ParkConfig` por las siguientes razones:
 
-*   **Punto único de acceso:** La configuración del parque (nombre, capacidad máxima, horario de apertura) debe ser consistente en toda la aplicación.
-*   **Prevención de inconsistencias:** Al asegurar que solo exista una instancia de la configuración, evitamos que diferentes partes del sistema operen con datos contradictorios.
-*   **Gestión de recursos:** Centraliza la lectura de archivos de configuración o propiedades del sistema en una sola carga inicial.
+*   **Punto único de acceso:** La configuración del parque (cantidad maxima de personas, numero de dinosaurios, numero de turistas, etc) debe ser consistente en toda la aplicación.Al asegurar que solo exista una instancia de la configuración, evitamos que diferentes partes del sistema operen con datos contradictorios.
+.
 
 ### 2. Strategy (en los Eventos)
-El patrón **Strategy** se ha implementado para el manejo de eventos (como alimentación, recorridos turísticos o emergencias) debido a:
+El patrón **Strategy** se ha implementado para el manejo de eventos (emergencias) debido a:
 
 *   **Encapsulamiento de algoritmos:** Cada tipo de evento tiene una lógica de ejecución distinta. El patrón permite encapsular estas variantes en clases separadas que implementan una interfaz común.
-*   **Principio de Abierto/Cerrado (Open/Closed):** Podemos añadir nuevos tipos de eventos (por ejemplo, "Clima Extremo") simplemente creando una nueva clase que implemente la estrategia, sin necesidad de modificar el código existente que procesa los eventos.
 *   **Flexibilidad en tiempo de ejecución:** Permite cambiar el comportamiento del sistema dinámicamente según el evento que se esté disparando en el parque.
 
 ## Estructura del Proyecto
@@ -42,9 +40,9 @@ mvn clean install
 Para ejecutar la aplicación principal:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.axity.App"
+mvn exec:java
 ```
-*(Nota: Asegúrate de reemplazar "com.axity.App" por la clase principal de tu proyecto).*
+
 
 ## Pruebas
 
@@ -55,6 +53,9 @@ Para ejecutar los tests:
 ```bash
 mvn test
 ```
+
+## Diagrama UML 
+![Diagrama UML](Diagrama sin título.drawio.png)
 
 ---
 *Proyecto desarrollado para el Laboratorio Java 360.*
