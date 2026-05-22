@@ -18,9 +18,6 @@ class ParkStateTest {
         state = new ParkState();
     }
 
-    // =========================
-    // STEP TEST
-    // =========================
 
     @Test
     void shouldIncrementStepCorrectly() {
@@ -33,9 +30,6 @@ class ParkStateTest {
         assertEquals(2, state.getCurrentStep());
     }
 
-    // =========================
-    // REVENUE / EXPENSE
-    // =========================
 
     @Test
     void shouldAddRevenueCorrectly() {
@@ -64,9 +58,6 @@ class ParkStateTest {
         assertEquals(125, state.getBalance());
     }
 
-    // =========================
-    // TOURISTS
-    // =========================
 
     @Test
     void shouldCountActiveTouristsCorrectly() {
@@ -85,9 +76,6 @@ class ParkStateTest {
         assertEquals(2, state.getActiveTourists().size());
     }
 
-    // =========================
-    // DINOSAURS
-    // =========================
 
     @Test
     void shouldCountDinosaursInEnclosure() {
