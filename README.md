@@ -55,7 +55,8 @@ mvn test
 ```
 
 ## Diagrama UML 
-![Diagrama UML](Diagrama sin título.drawio.png)
+Enlace del digrama: https://drive.google.com/file/d/1MKo04n-bF2DyjhFr5T2SZwjTtaC3Z312/view?usp=sharing
+<img src="Diagrama sin título.drawio.png" alt="Logo" width="1200">
 
 ---
 *Proyecto desarrollado para el Laboratorio Java 360.*
